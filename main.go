@@ -9,7 +9,7 @@ import (
 
 func thisiscmddemo() {
 	log.Println("this is cmd demo : docker -v")
-	cmd := exec.Command("docker -v")
+	cmd := exec.Command("docker", "-v")
 	data, err := cmd.CombinedOutput()
 	result := string(data)
 	if len(result) > 0 {
@@ -21,7 +21,7 @@ func thisiscmddemo() {
 
 func thisisgitdemo() {
 	log.Println("this is cmd demo : git --version")
-	cmd := exec.Command("git --version")
+	cmd := exec.Command("git", "--version")
 	data, err := cmd.CombinedOutput()
 	result := string(data)
 	if len(result) > 0 {
