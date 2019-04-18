@@ -8,7 +8,7 @@ import (
 )
 
 func CreateUser(args sdk.Arguments) error {
-	log.Println("CreateUser has been started!")
+	log.Println("CreateUser is my defined has been started!")
 
 	// lets sleep to simulate that we do something
 	time.Sleep(5 * time.Second)
