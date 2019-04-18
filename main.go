@@ -19,9 +19,22 @@ func thisiscmddemo() {
 	log.Println(err)
 }
 
+func thisisgitdemo() {
+	log.Println("this is cmd demo : git --version")
+	cmd := exec.Command("git --version")
+	data, err := cmd.CombinedOutput()
+	result := string(data)
+	if len(result) > 0 {
+		log.Println(result)
+	}
+	log.Println(result)
+	log.Println(err)
+}
+
 func CreateUser(args sdk.Arguments) error {
 	log.Println("CreateUser is my defined has been started!")
 	thisiscmddemo()
+	thisisgitdemo()
 	// lets sleep to simulate that we do something
 	time.Sleep(5 * time.Second)
 	log.Println("CreateUser has been finished!")
