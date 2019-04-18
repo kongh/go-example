@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	sdk "github.com/gaia-pipeline/gosdk"
 	"log"
 	"os/exec"
@@ -16,7 +15,8 @@ func thisiscmddemo() {
 	if len(result) > 0 {
 		log.Println(result)
 	}
-	fmt.Println(err)
+	log.Println(result)
+	log.Println(err)
 }
 
 func CreateUser(args sdk.Arguments) error {
