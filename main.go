@@ -1,15 +1,27 @@
 package main
 
 import (
-	"log"
-	"time"
-
+	"fmt"
 	sdk "github.com/gaia-pipeline/gosdk"
+	"log"
+	"os/exec"
+	"time"
 )
+
+func thisiscmddemo() {
+	log.Println("this is cmd demo : docker -v")
+	cmd := exec.Command("docker -v")
+	data, err := cmd.CombinedOutput()
+	result := string(data)
+	if len(result) > 0 {
+		log.Println(result)
+	}
+	fmt.Println(err)
+}
 
 func CreateUser(args sdk.Arguments) error {
 	log.Println("CreateUser is my defined has been started!")
-
+	thisiscmddemo()
 	// lets sleep to simulate that we do something
 	time.Sleep(5 * time.Second)
 	log.Println("CreateUser has been finished!")
